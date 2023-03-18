@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form</title>
+    </head>
+<script src=
+"https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+</script>
+<link rel="stylesheet" type="text/css" href="styles.css" />
+<script src="app.js"></script>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+    <form name="form1" ng-submit="submitFunc()">
+        <!-- <center> -->
+            <!-- <center> -->
+                <div class="header">
+                    <span class="text1">Student Registration</span>
+                    <span class="text2">For Hobby Courses</span>
+                </div>
+            <!-- </center> -->
+            <!-- <form name="myForm"> -->
+                <div class="formContent">
+                    <table>
+                        <tr>
+                            <td colspan="2"><h3>First Name:</h3></td>
+                            <td colspan="2"><input type="text" size="30px" placeholder="    first name" name="fname" ng-model="fname" required></td>
+                            <td colspan="2"><p class="instruction" ng-show="form1.fname.$pristine && form1.fname.$invalid">enter first name</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><h3>Last Name:</h3></td>
+                            <td colspan="2"><input type="text" size="30px" placeholder="    last name" name="lname" ng-model="lname" required></td>
+                            <td colspan="2"><p class="instruction" ng-show="form1.lname.$pristine && form1.lname.$invalid">enter last name</p></td>
+                        </tr>
+                        <tr>
+                            <td><h3>Gender:</h3></td>
+                            <td>
+                                <div class="radio">
+                                    <input type="radio" id="female" name="gen" value="Female" ng-model="color" ng-required="!color">
+                                    <label for="female" style="height: 20px">Female</label><br>
+                                </div>
+                                <div class="radio">
+                                    <input type="radio" id="male" name="gen" value="Male" ng-model="color" ng-required="!color">
+                                    <label for="male">Male</label><br>
+                                </div>
+                                <div class="radio">
+                                    <input type="radio" id="other" name="gen" value="Other" ng-model="color" ng-required="!color">
+                                    <label for="other">Other</label>
+                                </div>
+                            </td>
+                            <td><p class="instruction" ng-show="form1.gen.$pristine && form1.gen.$invalid">select one option</p></td>
+                            <td><h3>Age:</h3></td>
+                            <td><input type="number" size="5" placeholder="    age" name="age" ng-model="age" min="18" max="30" required></td>
+                            <td><p class="instruction" ng-show="form1.age.$invalid">age should be 18 and above</p></td>
+                        </tr>
+                        <tr>
+                            <td><h3>Email:</h3></td>
+                            <td><input type="email" size="30px" placeholder="    email ID" name="email" ng-model="email" required></td>
+                            <td><p class="instruction" ng-show="form1.email.$invalid">enter Email</p></td>
+                            <td><h3>Contact Number:</h3></td>
+                            <td><input type="text" placeholder="    contact" name="contact" ng-model="contact" minlength="10" maxlength="10" required></td>
+                            <td><p class="instruction" ng-show="form1.contact.$invalid">enter 10 digit number</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><h3>Address:</h3></td>
+                            <td colspan="2"><textarea placeholder="    address" rows="3" cols="30" name="add" ng-model="add" required></textarea></td>
+                            <td colspan="2"><p class="instruction" ng-show="form1.add.$invalid">enter your address</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><h3>Mother's full name:</h3></td>
+                            <td colspan="2"><input type="text" size="30" placeholder="    mother's full name" name="mom" ng-model="mom" required></td>
+                            <td colspan="2"><p class="instruction" ng-show="form1.mom.$invalid">enter mother's full name</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><h3>Father's full name:</h3></td>
+                            <td colspan="2"><input type="text" size="30" placeholder="    father's full name" name="dad" ng-model="dad" required></td>
+                            <td colspan="2"><p class="instruction" ng-show="form1.dad.$invalid">enter Father's full name</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><h3>Course:</h3></td>
+                            <td colspan="2">
+                                <select ng-model="courses" ng-init="checkSelection()" ng-change="checkSelection()"  required>
+                                    <option value="">--Select Course--</option>
+                                    <option ng-repeat="option in courseList" value="{{option.course}}">{{option.course}}</option>
+                                </select>
+                            </td>
+                            <td colspan="2"><p class="instruction">{{msg}}</p></td>
+                        </tr>
+                    </table>
+                    <br><br>
+                    <div class="btns">
+                        <button type="submit" ng-disabled="form1.$invalid">Submit</button>
+                        <button type="reset" ng-click="reset()">Reset</button>
+                    </div>
+                    <br>
+                    <h1>{{finalText}}</h1>
+
+                    <div class="displayData">
+                        <center>
+                            <table>
+                                <tr ng-show="finalTable">
+                                    <td>First Name</td>
+                                    <td>Last Name</td>
+                                    <td>Email ID</td>
+                                    <td>Selected Course</td>
+                                </tr>
+                                <tr ng-repeat="record in records">
+                                    <!-- <tr> -->
+                                    <td>{{record.fname}}</td>
+                                    <td>{{record.lname}}</td>
+                                    <td>{{record.email}}</td>
+                                    <td>{{record.course}}</td>
+                                </tr>
+                            </table>
+                        </center>
+                    </div>
+
+                </div>
+            <!-- </form> -->
+        <!-- </center> -->
+    </form>
+</body>
+</html>

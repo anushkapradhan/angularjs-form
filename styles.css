@@ -1,0 +1,126 @@
+body{
+    font-family: sans-serif;
+    
+}
+.header{
+
+    text-align: center;
+    padding: 0px;
+    position: absolute;
+    left: 26%;
+        
+}
+.header span{
+    text-transform: uppercase;
+    display: block;
+}
+span.text1{
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    margin-bottom: 15px;
+    position: relative;
+    background: white;
+    animation: text 3s 1;
+}
+span.text2{
+    font-size: 20px;
+    font-weight: 500;
+}
+@keyframes text {
+    0%{
+        color: white;
+        margin-bottom: -40px ;
+    }
+    30%{
+        letter-spacing: 15px;
+        margin-bottom: -40px;
+    }
+    85%{
+        letter-spacing: 8px;
+        margin-bottom: 15px;
+    }
+}
+input,textarea,select{
+    border-radius: 8px;
+    height: 30px;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    background-color: #eee;
+}
+input,textarea,select:focus{
+    outline: none;
+}
+input:hover,textarea:hover,select:hover{
+    background-color: rgb(196, 197, 196);
+}
+input.ng-valid,textarea.ng-valid,select.ng-valid{
+    background-color: rgb(208, 255, 208);
+}
+
+div.formContent{
+    
+    border-radius: 25px;
+    margin: 50px;
+    padding: 100px;
+    padding-top: 120px;
+    padding-left: 150px;
+}
+p.instruction{
+    color: red;
+}
+td{
+    text-align:center;
+}
+
+.radio {
+    
+    font-size: 15px;
+    line-height: 52px;
+    margin-bottom: -25px;
+    
+}
+.radio input {
+    
+    position: relative;
+    top: 9px;
+}
+.btns{
+    text-align: center;
+}
+.btns button{
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 15px 32px;
+    border-radius: 8px;
+    background-color: #000000;
+    border: none;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:disabled{
+    background-color: rgb(170, 167, 167);
+    color: #e9e6e6;
+    cursor: not-allowed;
+}
+
+h1{
+    text-align: center;
+}
+
+.displayData{
+    text-align: center;
+}
+.displayData td{
+    text-align: center;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #eee;
+}
